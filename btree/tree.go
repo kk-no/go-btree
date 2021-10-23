@@ -10,8 +10,7 @@ func New() *Tree {
 
 func (t *Tree) Push(value int) {
 	if t.Root == nil {
-		t.Root = &Node{Value: value, Depth: 1}
-		return
+		t.Root = NewNode()
 	}
-	t.Root.Push(value)
+	t.Root = t.Root.Push(value)
 }
